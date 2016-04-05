@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+<title>Switcher TSA App</title>
+</head>
+<body>
+
+
+<h1>Switcher TSA App</h1>
+
+<div class="wrapper">
+    <article class="arrow">
+        <img src="http://cdn-0.freeclipartnow.com/d/40220-1/arrow-blue-outline-right.jpg">
+    </article>
+</div>
+
+<script type='text/javascript'>
+    $('.arrow').on('click', function(){
+        var random =  Math.random() * 100,
+        self = $(this);
+
+        if(parseInt(random) % 2 == 0) {
+            $(this).addClass('left');
+        } else {
+            $(this).addClass('right');
+        }
+        setTimeout(function(){
+            $(self).removeClass('left');
+            $(self).removeClass(' right');
+        }, 2000);
+
+    });
+</script>
+<style type="text/css">
+.arrow {
+    transform: rotate(-90deg);
+    -webkit-transition: all 1s; /* Safari */
+    transition: all 1s;
+    display: inline-block;
+}
+.arrow.right {
+    transform: rotate(0deg);
+}
+.arrow.left {
+    transform: rotate(-180deg);
+}
+</style>
+
+</body>
+</html>
